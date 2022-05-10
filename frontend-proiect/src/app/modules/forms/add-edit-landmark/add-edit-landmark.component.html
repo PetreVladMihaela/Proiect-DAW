@@ -1,0 +1,49 @@
+<div class="container">
+    <h1 class='title'> {{ title }} </h1>
+  
+    <form [formGroup] ="landmarkForm" class="landmark-form"> 
+      <!-- <mat-form-field appearance="outline">
+        <mat-label>Landmark Id</mat-label>
+        <input matInput placeholder="Id" formControlName="Id" required>
+      </mat-form-field> -->
+
+      <mat-form-field appearance="outline">
+        <mat-label>Landmark Name</mat-label>
+        <input cols="200" matInput placeholder="Name" formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Short Description</mat-label>
+        <textarea class="desc" matInput placeholder="Short Description" formControlName="description" rows="10" cols="50"> </textarea>
+      </mat-form-field>
+
+      <!-- <mat-form-field appearance="outline">
+        <mat-label>Country Id</mat-label>
+        <input matInput placeholder="CountryId" formControlName="CountryId">
+      </mat-form-field> -->
+    </form>
+
+    <form [formGroup] ="locationForm" class="loc-form"> 
+      <!-- <mat-form-field appearance="outline">
+        <mat-label>Landmark Id</mat-label>
+        <input matInput placeholder="Id" formControlName="Id" required>
+      </mat-form-field> -->
+
+      <mat-form-field appearance="outline">
+        <mat-label>City</mat-label>
+        <input matInput placeholder="City" formControlName="city">
+      </mat-form-field>
+    </form>
+  
+    <div class="actions">
+      <button mat-raised-button class="cancel" (click)="closeDialog()" appButtonHover>
+        Cancel
+      </button>
+  
+      <!-- <div *ngIf="!data.landmark" class="button-wrapper" (click)="saveFormData()" appButtonHover> -->
+      <button  mat-raised-button class="save" (click)="saveFormData()" appButtonHover>
+        Save
+      </button>
+    </div>
+</div>
+  

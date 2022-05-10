@@ -1,0 +1,28 @@
+<div class="container">
+    <h1 class='title'> {{ title }} </h1>
+  
+    <!--<p [ngStyle]="isEditable ? {color: 'red'} : {color: 'blue'}">Details:</p>-->
+  
+    <form [formGroup] ="countryForm" class="landmark-form"> 
+      <!-- <mat-form-field appearance="fill">
+        <mat-label>Country Id</mat-label>
+        <input matInput placeholder="Id" formControlName="Id" required> 
+      </mat-form-field> -->
+
+      <mat-form-field appearance="fill">
+        <mat-label>Country Name</mat-label>
+        <input matInput placeholder="Name" formControlName="name">
+      </mat-form-field>
+    </form>
+  
+    <div class="actions">
+      <button mat-raised-button class="cancel" (click)="closeDialog()" appButtonHover>
+        Cancel
+      </button>
+  
+      <!-- <div *ngIf="!data.landmark" class="button-wrapper" (click)="saveFormData()" appButtonHover> -->
+      <button  mat-raised-button class="save" (click)="saveFormData()" appButtonHover>
+        Save
+      </button>
+    </div>
+</div>

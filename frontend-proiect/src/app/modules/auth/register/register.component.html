@@ -1,0 +1,38 @@
+<div class="container">
+    <h1 class='title'> Register </h1>
+  
+    <form [formGroup] ="registerForm" class="register-form"> 
+
+      <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input matInput placeholder="First Name" formControlName="firstName">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input matInput placeholder="Last Name" formControlName="lastName">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" formControlName="email">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Password" formControlName="password">
+      </mat-form-field>
+
+    </form>
+  
+    <div class="actions">
+      <button mat-raised-button class="cancel" (click)="closeDialog()" appButtonHover>
+        Cancel
+      </button>
+  
+      <button  mat-raised-button class="register" (click)="saveAndRegister()" appButtonHover>
+        Register
+      </button>
+    </div>
+</div>
+  

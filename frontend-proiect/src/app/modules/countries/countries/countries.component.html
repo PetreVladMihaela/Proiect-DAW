@@ -1,0 +1,66 @@
+<div class="container">
+  <p> {{ todayDate | date :'fullDate' }} </p>
+  <p> {{ message }} </p>
+
+  <button mat-raised-button (click)="seeVisitors()" class="redirect" appButtonHover>
+    Go To Visitors Page
+  </button>
+
+  <h1 class="title">
+    Countries Catalogue
+  </h1>
+
+  <table mat-table [dataSource]="countries" class="table">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Country Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="landmarks">
+      <th mat-header-cell *matHeaderCellDef> Landmarks </th>
+      <td mat-cell *matCellDef="let element">
+        <mat-icon (click)="goToLandmarks(element.id, element.name)" class="see-landmarks">
+          list
+        </mat-icon>
+      </td>
+    </ng-container>
+
+    <ng-container *ngIf="isAdmin" matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef> Edit </th>
+      <td mat-cell *matCellDef="let element">
+        <mat-icon (click)="editCountry(element)" class="edit-action" appTableHover> 
+          edit
+        </mat-icon>
+      </td>
+    </ng-container>
+  
+    <ng-container *ngIf="isAdmin" matColumnDef="delete" >
+      <th mat-header-cell *matHeaderCellDef> Delete </th>
+      <td mat-cell *matCellDef="let element">
+        <mat-icon (click)="deleteCountry(element.id)" class="delete-action">
+          delete
+        </mat-icon>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" appTableHover></tr>
+  </table>
+
+  <button mat-raised-button (click)="addCountry()" class="add-button" appButtonHover>
+    Add Country
+  </button>
+
+  <!-- <app-child [message]="parentMessage" (messageEvent)="receiveMessage($event)"></app-child> -->
+
+  <button mat-raised-button (click)="logout()" class="logout-button" appButtonHover>
+    Logout
+  </button>
+</div>
+

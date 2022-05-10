@@ -1,0 +1,23 @@
+<div class="container">
+  <p class="greeting"> {{ message }} </p>
+
+  <div class="login-section">
+    <p>Enter your username and password:</p>
+    <form [formGroup]="loginForm" class="login-form">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" formControlName="email">
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" placeholder="Password" formControlName="password">
+      </mat-form-field>
+    </form>
+
+    <p class="warning" [ngStyle]="hideWarning ? {display: 'none'} : {display: 'block'}">Incorrect email or password!</p>
+
+    <button mat-raised-button (click)="login()">Login</button>
+  </div>
+  <p>Or</p> <button mat-raised-button (click)="register()">Register</button>
+</div>

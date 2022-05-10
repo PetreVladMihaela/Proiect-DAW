@@ -1,0 +1,33 @@
+<div class="container">
+    <h1 class="title">
+      {{info.name}} Info
+    </h1>
+
+    <!-- <p>{{visitorEmail}}</p> -->
+
+    <mat-card class="info-card">
+      <!-- <img mat-card-image
+           src="https:// " alt="profile-picture"> -->
+      <mat-card-content>
+        <!-- <p class="details">
+          Id: {{info.id}}
+        </p>
+        <p class="details">
+          Name: {{info.name}}
+        </p> -->
+        <p class="desc"> {{ "Description" | markText }}</p>
+          <p class="details"> {{info.description}} </p>
+        <p class="loc"> {{ "Location" | markText }} </p>
+          <p class="details"> Country: {{country}} </p>
+          <p class="details"> City: {{info.location.city}} </p>
+          <p class="details"> Address: {{info.location.address}} </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button class="add" [ngStyle]="visited ? {display: 'none'} : {display: 'inline-block'}"
+        (click)="addVisitor()" appButtonHover>Add to visited</button > 
+      </mat-card-actions>
+      <span class="visited" [ngStyle]="visited ? {display: 'inline-block'} : {display: 'none'}">Visited</span>
+    </mat-card>
+
+    <button mat-button class="go-back" (click)="goToCountries()" appButtonHover>Go back to <br>the Countries page</button > 
+  </div>

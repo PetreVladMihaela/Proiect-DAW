@@ -1,0 +1,58 @@
+.container {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: slategrey;//rgba(59, 68, 110, 0.89);
+  
+    .title {
+      font-size: 28px;
+      font-weight: bold;
+      color: powderblue;
+      margin-bottom: 35px;
+    }
+  
+    .table {
+      width: 60%;
+      height: auto;
+      border: 2px solid lightsteelblue;
+
+      th, td {
+        text-align: center;
+        border: 2px solid lightsteelblue;
+        color: lightgray;
+        padding: 5px;
+      }
+
+      th {
+        font-size: 18px;
+        color: lightskyblue
+      }
+      
+      .delete-action, .edit-action, .see-info {
+        cursor: pointer;
+      }
+    }
+
+    // .mat-column-id {
+    //   border-right: 2px solid currentColor;
+    //   padding-right: 24px;
+    // }
+
+    .add-button {
+      margin-top: 30px;
+      font-size: 14px;
+      padding: 5px;
+      font-weight: bold;
+      color: midnightblue;
+      border-width: 3px;
+      border-color: steelblue;
+      background-color: cornflowerblue;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  
+  }

@@ -1,0 +1,16 @@
+<div class="container">
+    <h1>List of Visitors</h1>
+    <ul>
+        <li *ngFor="let item of visitorsList">
+            <p> Name: {{item.visitor.firstName}} {{item.visitor.lastName}} </p>
+            <p> Email: {{item.visitor.email}} </p>
+            <p> Visited Landmarks: </p>
+            <ul>
+                <li *ngFor="let landmark of item.landmarks">
+                    {{landmark.name}}
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <button mat-button (click)="goToCountries()" class="redirect">Go to the Countries Catalogue</button>
+</div>
